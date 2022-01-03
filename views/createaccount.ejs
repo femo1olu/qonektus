@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<%- include('includes/usersheader') %>
+<body>
+<div class="jumbotron jumbotron-main"> <!--was jumbotron-sub -->
+<%- include('includes/navbar') %>
+</div>
+	<div class="container">
+		<div class="alert" style = "color: goldenrod"> <strong><%- msg %></strong></div>
+		<form id="myacctForm" name="myform" class="form-check" method="POST" action="createaccount">  <!-- Femi had  Action = signup class="mb-3 form-check" , move to right by 3; Col-sm-2 reduces length of input panel-->
+			<fieldset>
+				<label for="exampleFirstName" class="form-label">First Name</label><br>
+				<input type="text" class="form-control" id="FirstName" aria-describedby="firstnameHelp" name="firstname" required>
+
+				<label for="exampleLastName" class="form-label">Last Name</label><br>
+				<input type="text" class="form-control" id="LastName" aria-describedby="lastnameHelp" name="lastname" required>	
+				<br>
+				<label for="exampleInputEmail1" class="form-label">Email address<br>
+	   			<input type="email" class="form-control" id="Email" name="email" aria-describedby="emailHelp" required>
+	   			</label>
+	    		<div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+
+				
+				<label for="exampleInputPassword1" class="form-label">Password
+	    		<input type="password" class="form-control" id="Password1" name="password1">
+	    		</label>
+	    		<br>
+	    		<label for="exampleInputPassword2" class="form-label">Confirm Password
+	    		<input type="password" class="form-control" id="Password2" name="password2">
+	    		</label>
+				  <div>
+				  	<label>Phone</label>
+				  </div>
+				  <div class="form-group input phone">
+				    <input type="number" placeholder="123" class="form-control" name ="areacode">
+				    <span> - </span>
+				    <input type="number" placeholder="456"  class="form-control" name ="exchangecode">
+				    <span> - </span>
+				    <input type="number" placeholder="7890" class="form-control" name ="lineid">
+				  </div>
+			</fieldset>
+			<fieldset>
+				<label>Location<br>
+				<select class="form-select form-select-md" aria-label=".form-select-md example" name="location" id="mylocation">
+					<option value=" " selected></option>
+					<option value="US">US</option>					
+					<option value="NG">Nigeria</option>
+					<option value="CA">Canada</option>
+					<option value="EL">England</option>
+				</select>
+				</label>
+				<br>
+				<label>Gender<br>
+				<input type="radio" id = "male" name="gender" value="Male"> Male
+				<input type="radio" id = "female" name="gender" value="Female"> Female
+				</label>
+
+				<br><br>
+			 	<label>Interests<br>
+				<input type="checkbox" class="form-check-control" id="learn" name="interest1" value="Learn"> Learn
+				<input type="checkbox" class="form-check-control" id="teach" name="interest2" value="Teach"> Teach		
+				</label>
+			</fieldset>
+			<button type="submit" class="btn btn-primary"><strong>Submit</strong></button>
+			<br>
+			<br>
+			<p><strong>Have Account?</strong><a href="users/signin"><strong> Log-in</strong></a></p>
+	</form>
+	</div>
+
+</body>
+</html>

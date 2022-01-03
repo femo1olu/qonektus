@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang ="en">
+<%- include('includes/usersheader')%>
+<body>
+  <div class="jumbotron jumbotron-main"> 
+<%- include('includes/usersnavbar')%>
+
+  </div>
+	<div class="container">
+		<div class="alert" style = "color: goldenrod"> <strong><%- msg %></strong></div>
+
+		<form id="myacctForm" name="myform" class="form-check" method="POST" action="users/registration">  <!-- class="mb-3 form-check" , move to right by 3; Col-sm-2 reduces length of input panel-->
+			<fieldset>
+
+				<label for="sigininEmail" class="form-label">Account Email address<br>
+	   			<input type="email" class="form-control" id="Email" aria-describedby="emailHelp" name="email" >
+	   			</label>
+	   			<br>
+				<label for="SigninPassword" class="form-label">Password
+	    		<input type="password" class="form-control" id="Password" name= "password">
+	    		</label>
+	    		<br>
+
+	            <label for="StudentFirstName" class="form-label">Student's First Name</label><br>
+				<input type="text" class="form-control" id="StudentFirstName" aria-describedby="firstnameHelp" name="firstname">
+
+				<label for="StudentLastName" class="form-label">Student's Last Name</label><br>
+				<input type="text" class="form-control" id="StudentLastName" aria-describedby="lastnameHelp" name="lastname">	
+				<br>
+			</fieldset>
+        	<br>
+			<fieldset>
+				<label>Student's Location<br>
+				<select class="form-select form-select-md" aria-label=".form-select-md example" name="location" id="studentlocation">
+					<option value=" " selected></option>
+					<option value="US">US</option>					
+					<option value="NG">Nigeria</option>
+					<option value="CA">Canada</option>
+					<option value="EL">England</option>
+				</select>
+				</label>
+				<br>
+				<label>Student's Gender<br>
+				<input type="radio" id = "male" name="gender" value="Male"> Male
+				<input type="radio" id = "female" name="gender" value="Female"> Female
+				</label>
+
+				<br><br>
+			 	<label>Student's Status<br>
+				<input type="radio" id="newstudent" name="studentstatus" value="new"> New
+				<input type="radio" id="currentstudent" name="studentstatus" value="current"> Current		
+				</label>
+				<div id ="studentid" >
+					<label for="StudentIDNum" class="form-label" >Current Student? Provide your ID number<br>
+					<input type="number" class="form-control" id="studentnum" name="studentnum">	
+					</label>
+				</div>
+			</fieldset>
+			<br>
+			<button type="submit" class="btn btn-primary"><strong>Submit</strong></button>
+			<p><strong>No Account?</strong><a href="/createaccount"><strong> Create Account</strong></a></p>
+	</form>
+	</div>
+
+ 	<script>
+   		 async function handleValidateSubmitForm(event){	
+		event.preventDefault(); //Stops form from submitting since we will handle with ejs. 
+	   		 	const data = new FormData(event.target);
+	   		 	const value = Object.fromEntries(data.entries());
+	   		 	// To ensure multiple checked option can be passed as JASON Valu
+	   		 	//value.topics =data.getAll("topics")
+	   		 	var currentstuID = document.getElementById('studentid').value; 
+			 	
+			 	console.log(Object.values(value));
+            // Client-side input validation
+			var clientmsg = document.getElementById('clientmsg');
+    		if(value.firstname == '' || value.lastname =='' || value.email == '' || value.password == '' || (value.male == false && value.female == false) || (value.newstu == false && value.currentstu == false) || value.location == ' ' ){
+				clientmsg.className="alert alert-danger";
+				clientmsg.innerHTML = 'Please fill out all fields';
+			} else { 
+							if(value.firstname.length < 3){
+								clientmsg.className="alert alert-danger";
+								clientmsg.innerHTML = 'Firstname must be at least 3 characters';
+							} else {
+								var atpos = value.email.indexOf("@");
+								var dotpos = value.email.lastIndexOf(".");
+								if(atpos < 1 || dotpos < atpos+2 || dotpos+2 >= value.email.length){
+									clientmsg.className="alert alert-danger";
+									clientmsg.innerHTML = 'Please use valid email account';
+								} else {
+									if(value.password == ' '){
+									clientmsg.className="alert alert-danger";
+									clientmsg.innerHTML = 'No password entered. Please enter your password';
+								} else {
+									// Success
+									clientmsg.className="alert alert-success";
+									clientmsg.innerHTML = value.firstname+ ' '+ value.lastname+' will be registered under your account with this email '+ value.email;
+								}
+							}
+						}
+
+					}
+					//New Addition
+            // Send value to Backend.. Why? This is Backend.
+						console.log(Object.values(value));
+						// Newly Added
+						// use fetch to POST form entries to server.
+						const options = {
+							method: 'POST',
+							headers:{
+								'Content-type':'application/json'
+							},
+							body: JSON.stringify(value)
+						};
+						const response = await fetch('/users/registration', options);
+						const servervalue = await response.json();
+						console.log(servervalue);
+					//End of newly added
+		}
+
+
+     //document.getElementById('myacctForm').addEventListener('submit', validateForm, false);  
+     //This is to disable my client-side validation, the logic above somehow prevented the ejs router to POST (i.e. write to console or browser)
+     	const form = document.querySelector('form');
+      	form.addEventListener('submit', handleValidateSubmitForm);
+        
+  
+  	</script>
+
+
+</body>
+</html>

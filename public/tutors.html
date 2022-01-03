@@ -1,0 +1,187 @@
+<!DOCTYPE html>  <!-- This Page is not Used -->
+<html>
+<head>
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Qonektus</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/style.css">
+<script   src="https://code.jquery.com/jquery-1.12.4.js"   integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="   crossorigin="anonymous"></script>
+
+<script src="js/bootstrap.js"></script>
+</head>
+<body>
+<div class="jumbotron jumbotron-main"> <!--was jumbotron-sub -->
+  <nav class="navbar">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/"><strong>Qonektus</strong></a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/"><strong>Home</strong></a></li>
+            <li><a href="about"><strong>About</strong></a></li>
+            <li><a href="services"><strong>Services</strong></a></li>
+            <li><a href="contact"><strong>Contact</strong></a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+</div>
+      <!-- Profile 1 -->
+<div class="card col-md-4 well2" style="max-width: 440px; padding-right: 10px; margin-left: 18px;">
+  <div class="row g-0">
+    <div class="col-md-4" style = "padding-top: 5px;">
+      <img src="img/TounOmoniyi_new_II.jpg" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h4 class="card-title" style = "color: goldenrod;"> <strong>Toun Omoniyi</strong></h4>
+        <h6><strong style = "color: #2ECC71;">Skills: Educator with over 10 years experience </strong></h6>
+        <p class="card-text" id ="expandbio1"> <small><strong>Since I was a child, I have shown an unusual flair for languages particularly my mother tongue (Yoruba Language). 
+        Over the years, I have taken children language classes on a pro bono basis, given my keen interest in yoruba language and culture.
+        <a href='#' onclick="return readmore_prof1()">Read more &nbsp;</a> </strong> </small></p>
+        <p class="card-text"><small class="text-muted">Platinum level Tutor </small> 
+        </p>
+        <a href="/users/signin" class="btn btn-primary"> <strong> Register &nbsp <span class="glyphicon glyphicon-education"></span></strong> </a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Profile 1 Calendar -->
+<div class="card col-md-4 well2" style="max-width: 440px; padding-right: 10px; margin-left: 18px;">
+ <div id = "app-calendar"></div>
+</div>
+
+      <!-- Profile 2 -->
+<div class="card col-md-4 well2" style="max-width: 440px; padding-right: 10px; margin-left: 18px;">
+  <div class="row g-0">
+    <div class="col-md-4" style = "padding-top: 5px;">
+      <img src="img/TaiwoAfolamiII.jpg" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h4 class="card-title" style = "color: goldenrod;"> <strong>Taiwo Afolami</strong></h4>
+        <h6><strong style = "color: #2ECC71;">Skills: Music Director of Rosecroft Preparatory School/Music Consultant to different Schools across Nigeria.</strong></h6>
+        <p class="card-text" id ="expandbio2"> <small><strong>A music instructor per excellence with students across Nigeria, Canada and America. Successfully organizing online music recital with student preforming from different part of the world. 
+        <a href='#' onclick="return readmore_prof2()">Read more &nbsp;</a> </strong> </small></p>
+
+        <p class="card-text"><small class="text-muted">Platinum level Tutor </small> 
+        </p>
+        <a href="/users/signin" class="btn btn-primary"> <strong> Register &nbsp <span class="glyphicon glyphicon-music"></span></strong> </a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Profile 2 Calendar -->
+<div class="card col-md-4 well2" style="max-width: 440px; padding-right: 10px; margin-left: 18px;">
+
+</div>
+ <script>
+      const calendar = document.querySelector('#app-calendar');
+      console.log(calendar);
+      for(let day = 1; day <= 31; day++){
+          console.log(day);
+          calendar.insertAdjacentHTML("beforeend", '<div class = "day">${day}</div>');
+      }
+ </script>
+
+<script>
+      //More or less profile 1
+     function readmore_prof1(){ 
+      document.getElementById('expandbio1').innerHTML = `<p class="card-text" id ="expandbio"> <small><strong>Since I was a child, I have shown an unusual flair for languages particularly my mother tongue (Yoruba Language). 
+        Over the years, I have taken children language classes on a pro bono basis, given my keen interest in teaching yoruba language and culture to children. I am a proud native of Ogun State Nigeria, with over a decade of experience as an educator. I understand that every child has different strengths and weaknesses in their learning process. Therefore, I am committed to having differentiated instruction in my class with a variety of opportunities for my students to achieve their goals. Nevertheless, learning a language involves repetition, constant work, and memorization skills. I will request your support at home to reach our goals.
+        <a href='#' onclick="return readless_prof1()">Read less &nbsp;</a></strong> </small></p>`;
+        };
+
+     function readless_prof1(){ 
+      document.getElementById('expandbio1').innerHTML = `<p class="card-text" id ="expandbio"> <small><strong>Since I was a child, I have shown an unusual flair for languages particularly my mother tongue (Yoruba Language). 
+        Over the years, I have taken children language classes on a pro bono basis, given my keen interest in teaching yoruba language and culture to children.
+        <a href='#' onclick="return readmore_prof1()">Read more &nbsp;</a></strong> </small></p>`;
+        };
+
+
+      //More or less profile 2
+     function readmore_prof2(){ 
+      document.getElementById('expandbio2').innerHTML = `<p class="card-text" id ="expandbio"> <small><strong>A music instructor per excellence with students across Nigeria, Canada and America. Successfully organizing online music recital with student preforming from different part of the world. Observing each student in order to engage them effectively musically. Develop their skills, reasoning and creativity with a well-structured, acceptable technique. I love teaching, knowing more about my students, studying and expressing my creativity musically.
+
+        My experience with students in diaspora shows that music flows perfectly with Good communication and this is my strength.
+        <a href='#' onclick="return readless_prof2()">Read less &nbsp;</a></strong> </small></p>`;
+        };
+
+     function readless_prof2(){ 
+      document.getElementById('expandbio2').innerHTML = `<p class="card-text" id ="expandbio"> <small><strong>A music instructor per excellence with students across Nigeria, Canada and America. Successfully organizing online music recital with student preforming from different part of the world. 
+        <a href='#' onclick="return readmore_prof2()">Read more &nbsp;</a></strong> </small></p>`;
+        };
+</script>
+
+
+<br>
+<br>         
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+  <footer class="main-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+        <h3>About Us</h3>
+        <p>Qonektus platform launched in 2021 with a simple mission and goal...connect local credible skilled talents with opportunities in the diapora community.
+          <br>
+        We know it takes a community to truly florish and here is our contribution to bridging the gap between skill and opportunities</p>
+        <p>Copyright &copy; 2017</p>
+        </div>
+        <div class="col-md-3">
+          <ul class="list-unstyled">
+            <li><strong><a href="users/signin"><span class="glyphicon glyphicon-open-file"></span> Log-in</a></strong></li> 
+            <li><strong><a href="#"><span class="glyphicon glyphicon-send"></span> Share</a></strong></li> 
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <ul class="list-unstyled">
+            <li><strong><a href="users/createaccount"><span class="glyphicon glyphicon-inbox"></span> Create Account</a></strong></li>
+            <li><strong><a href="#"><span class="glyphicon glyphicon-film"></span> View Recorded Sessions</a></strong></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <ul class="list-unstyled">
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang ="en">
+<%- include('includes/usersheader')%>
+<body>
+
+<%- include('includes/usersnavbar')%>
+	<div class="container">
+		<!-- <div class="alert" style = "color: goldenrod"> <strong><%- msg %></strong></div> -->
+		<h1 class="mt-4"> <%= msg %>, Here are the available classes</h1>
+		<form id="myRegForm" name="myform" class="form-check" method="POST" action="order">  <!-- class="mb-3 form-check" , move to right by 3; Col-sm-2 reduces length of input panel--> 
+			<div class="container"> 
+    		<div class="row" style="margin-top: 30px; margin-left: 2px; margin-right: 0px">
+        		<div class="col-md-6 box">
+        			<label>
+					<input type="checkbox" id = "yoruba" name= "yoruba" value="yoruba">
+					</label>
+            		<a href="" class="btn btn-primary3 btn-lg" style="color: white"> <strong>Qonektus Yoruba June Sessions</strong></a> 
+					<br>
+			    </div>
+			</div>
+			<div class="row" style="margin-top: 10px;">
+       		 	<div class="col-md-6 box" >
+       		 		<label>
+					<input type="checkbox" id = "music" name= "music" value="music">
+					</label>
+            		<a href="" class="btn btn-primary3 btn-lg" style="color: white"> <strong>Qonektus  Music  June Sessions</strong></a>       		
+					<br>
+				</div>
+    		</div>
+    		<div class="row" style="margin-top: 10px;">
+        		<div class="col-md-6 box">
+        			<label>
+					<input type="checkbox" id = "debate" name= "debate" value="debate">
+					</label>
+            		<a href="" class="btn btn-primary3 btn-lg" style="color: white"> <strong>Qonektus Debate June Sessions</strong></a> 
+					<br>
+			    </div>
+    		</div>
+			</div>	
+			<br>
+			<br>
+			<br>
+			<br>
+			<button type="submit" class="btn btn-primary"><strong>Register</strong></button>
+
+		</form>
+	</div>
+</body>
+</html>

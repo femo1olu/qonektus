@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<%- include('includes/header')%>
+<body>
+<div class="jumbotron jumbotron-main"> <!--was jumbotron-sub -->
+<%- include('includes/navbar') %>
+</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-2">
+
+			</div>
+			<div class="col-md-8">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title"><strong>Contact Us</strong></h3>
+					</div>
+				<div class="panel-body">
+					<div class="alert" style = "color: goldenrod"><strong> <%- msg %> </strong></div> <!-- takes messages from Node Index.js -->
+					<form method="POST" action="contact">
+					  <div class="form-group">
+					    <label>Name</label>
+					    <input type="text" class="form-control" name="name" required>
+					  </div>
+					  <div class="form-group">
+					    <label>Email</label>
+					    <input type="email" class="form-control" name="email" required>
+					  </div>
+					  <div>
+					  	<label>Phone</label>
+					  </div>
+					  <div class="form-group input phone">
+					    <input type="number" placeholder="123" class="form-control" name ="areacode">
+					    <span> - </span>
+					    <input type="number" placeholder="456"  class="form-control" name ="exchangecode">
+					    <span> - </span>
+					    <input type="number" placeholder="7890" class="form-control" name ="lineid">
+					  </div>
+					  <div class="form-group">
+					    <label>Message</label>
+					    <textarea class="form-control" name ="enteredtext"></textarea>
+					  </div>
+					  <button type="submit" class="btn btn-primary"><strong>Submit</strong></button>
+					</form>
+			</div>
+			</div>
+			</div>
+		</div>
+	</div>
+	<br>
+	<br>
+	<br>
+<%- include('includes/whowearefooter') %>
+
+</body>
+</html>

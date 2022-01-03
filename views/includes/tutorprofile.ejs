@@ -1,0 +1,226 @@
+      <!-- Profile 1 -->
+<div class="card col-md-4 well2" style="max-width: 440px; padding-right: 10px; margin-left: 18px;">
+  <div class="row g-0">
+    <div class="col-md-4" style = "padding-top: 5px;">
+      <img src="img/TounOmoniyi_new_II.jpg" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h4 class="card-title" style = "color: goldenrod;"> <strong>Toun Omoniyi</strong></h4>
+        <h6><strong style = "color: #2ECC71;">Skills: Educator with over 10 years experience </strong></h6>
+        <p class="card-text" id ="expandbio1"> <small><strong>Since I was a child, I have shown an unusual flair for languages particularly my mother tongue (Yoruba Language). 
+        Over the years, I have taken children language classes on a pro bono basis, given my keen interest in yoruba language and culture.
+        <a href='#' onclick="return readmore_prof1()">Read more &nbsp;</a> </strong> </small></p>
+        <p class="card-text"><small class="text-muted">Platinum level Tutor </small> 
+        </p>
+        <a href="/users/signin" class="btn btn-primary"> <strong> Register &nbsp <span class="glyphicon glyphicon-education"></span></strong> </a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Profile 1 Calendar -->
+<div class="card col-md-4 well2" style="max-width: 440px; padding-right: 10px; margin-left: 18px;">
+<div id="calendarContainer"></div>
+<div id="organizerContainer"></div>
+
+</div>
+
+      <!-- Profile 2 -->
+<div class="card col-md-4 well2" style="max-width: 440px; padding-right: 10px; margin-left: 18px;">
+  <div class="row g-0">
+    <div class="col-md-4" style = "padding-top: 5px;">
+      <img src="img/TaiwoAfolamiII.jpg" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h4 class="card-title" style = "color: goldenrod;"> <strong>Taiwo Afolami</strong></h4>
+        <h6><strong style = "color: #2ECC71;">Skills: Music Director of Rosecroft Preparatory School/Music Consultant to different Schools across Nigeria.</strong></h6>
+        <p class="card-text" id ="expandbio2"> <small><strong>A music instructor per excellence with students across Nigeria, Canada and America. Successfully organizing online music recital with student preforming from different part of the world. 
+        <a href='#' onclick="return readmore_prof2()">Read more &nbsp;</a> </strong> </small></p>
+
+        <p class="card-text"><small class="text-muted">Platinum level Tutor </small> 
+        </p>
+        <a href="/users/signin" class="btn btn-primary"> <strong> Register &nbsp <span class="glyphicon glyphicon-music"></span></strong> </a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Profile 2 Calendar -->
+<div class="card col-md-4 well2" style="max-width: 440px; padding-right: 10px; margin-left: 18px;">
+<div id="calendarContainer2"></div>
+<div id="organizerContainer2"></div>
+</div>
+<script src="js/calendarorganizer.min.js"></script>
+<script>
+      //More or less profile 1
+     function readmore_prof1(){ 
+      document.getElementById('expandbio1').innerHTML = `<p class="card-text" id ="expandbio"> <small><strong>Since I was a child, I have shown an unusual flair for languages particularly my mother tongue (Yoruba Language). 
+        Over the years, I have taken children language classes on a pro bono basis, given my keen interest in teaching yoruba language and culture to children. I am a proud native of Ogun State Nigeria, with over a decade of experience as an educator. I understand that every child has different strengths and weaknesses in their learning process. Therefore, I am committed to having differentiated instruction in my class with a variety of opportunities for my students to achieve their goals. Nevertheless, learning a language involves repetition, constant work, and memorization skills. I will request your support at home to reach our goals.
+        <a href='#' onclick="return readless_prof1()">Read less &nbsp;</a></strong> </small></p>`;
+        };
+
+     function readless_prof1(){ 
+      document.getElementById('expandbio1').innerHTML = `<p class="card-text" id ="expandbio"> <small><strong>Since I was a child, I have shown an unusual flair for languages particularly my mother tongue (Yoruba Language). 
+        Over the years, I have taken children language classes on a pro bono basis, given my keen interest in teaching yoruba language and culture to children.
+        <a href='#' onclick="return readmore_prof1()">Read more &nbsp;</a></strong> </small></p>`;
+        };
+
+
+      //More or less profile 2
+     function readmore_prof2(){ 
+      document.getElementById('expandbio2').innerHTML = `<p class="card-text" id ="expandbio"> <small><strong>A music instructor per excellence with students across Nigeria, Canada and America. Successfully organizing online music recital with student preforming from different part of the world. Observing each student in order to engage them effectively musically. Develop their skills, reasoning and creativity with a well-structured, acceptable technique. I love teaching, knowing more about my students, studying and expressing my creativity musically.
+
+        My experience with students in diaspora shows that music flows perfectly with Good communication and this is my strength.
+        <a href='#' onclick="return readless_prof2()">Read less &nbsp;</a></strong> </small></p>`;
+        };
+
+     function readless_prof2(){ 
+      document.getElementById('expandbio2').innerHTML = `<p class="card-text" id ="expandbio"> <small><strong>A music instructor per excellence with students across Nigeria, Canada and America. Successfully organizing online music recital with student preforming from different part of the world. 
+        <a href='#' onclick="return readmore_prof2()">Read more &nbsp;</a></strong> </small></p>`;
+        };
+</script>
+
+<script>
+ // Basic config for profile 1
+var calendar = new Calendar("calendarContainer", "small",
+                            [ "Monday", 3 ],
+                            [ "#ffc107", "#ffa000", "#ffffff", "#ffecb3" ],
+                            {
+                                days: [ "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday",  "Saturday" ],
+                                months: [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ],
+                                indicator: false,
+                                // placeholder: "<span>Custom Placeholder</span>"
+                               placeholder: "<span>Available:<br> Wed 3:00pm - 6:00pm (EST) <br>\
+                                Sat 3:00pm - 6:00pm (EST) <br>\</span>"
+                            });
+
+var data = {
+            2021: {
+                12: {
+                    25: [
+                        {
+                            startTime: "00:00",
+                            endTime: "24:00",
+                            text: "Christmas Day"
+                        }
+                    ]
+                }
+            }
+        };
+
+var organizer = new Organizer("organizerContainer", calendar, data); 
+// Days Block Click Listener
+organizer.setOnClickListener('days-blocks',
+    // Called when a day block is clicked
+    function () {
+        console.log("Day block clicked");
+    }
+);
+
+// Days Block Long Click Listener
+organizer.setOnLongClickListener('days-blocks',
+    // Called when a day block is long clicked
+    function () {
+        console.log("Day block long clicked");
+    }
+);
+
+// Month Slider (Left and Right Arrow) Click Listeners
+organizer.setOnClickListener('month-slider',
+    // Called when the month left arrow is clicked
+    function () {
+        console.log("Month back slider clicked");
+    },
+    // Called when the month right arrow is clicked
+    function () {
+        console.log("Month next slider clicked");
+    }
+);
+
+// Year Slider (Left and Right Arrow) Click Listeners
+organizer.setOnClickListener('year-slider',
+    // Called when the year left arrow is clicked
+    function () {
+        console.log("Year back slider clicked");
+    },
+    // Called when the year right arrow is clicked
+    function () {
+        console.log("Year next slider clicked");
+    }
+);
+
+
+</script>
+
+<script>
+ // Basic config for profile 2
+var calendar = new Calendar("calendarContainer2", "small",
+                            [ "Monday", 3 ],
+                            [ "#ffc107", "#ffa000", "#ffffff", "#ffecb3" ],
+                            {
+                                days: [ "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday",  "Saturday" ],
+                                months: [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ],
+                                indicator: false,
+                                placeholder: "<span>Available: <br> Mon 3:30pm - 5:00pm (EST) <br> \
+                                Wed 1:00pm - 5:00pm (EST) <br>\
+                                Sat 4:30pm - 6:30pm (EST) <br>\
+                                Sun 5:00pm - 6:30pm (EST) <br></span>"
+                            });
+
+var data = {
+            2017: {
+                12: {
+                    25: [
+                        {
+                            startTime: "00:00",
+                            endTime: "24:00",
+                            text: "Christmas Day"
+                        }
+                    ]
+                }
+            }
+        };
+
+var organizer = new Organizer("organizerContainer2", calendar, data); 
+// Days Block Click Listener
+organizer.setOnClickListener('days-blocks',
+    // Called when a day block is clicked
+    function () {
+        console.log("Day block clicked");
+    }
+);
+
+// Days Block Long Click Listener
+organizer.setOnLongClickListener('days-blocks',
+    // Called when a day block is long clicked
+    function () {
+        console.log("Day block long clicked");
+    }
+);
+
+// Month Slider (Left and Right Arrow) Click Listeners
+organizer.setOnClickListener('month-slider',
+    // Called when the month left arrow is clicked
+    function () {
+        console.log("Month back slider clicked");
+    },
+    // Called when the month right arrow is clicked
+    function () {
+        console.log("Month next slider clicked");
+    }
+);
+
+// Year Slider (Left and Right Arrow) Click Listeners
+organizer.setOnClickListener('year-slider',
+    // Called when the year left arrow is clicked
+    function () {
+        console.log("Year back slider clicked");
+    },
+    // Called when the year right arrow is clicked
+    function () {
+        console.log("Year next slider clicked");
+    }
+);
+
+
+</script>

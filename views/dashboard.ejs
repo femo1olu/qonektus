@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<%- include('includes/usersheader') %>
+<body>
+
+<%- include('includes/usersnavbar') %>
+
+<div class="container"> 
+    <h1 class="mt-4"> Welcome <%= data.msg %></h1>
+    <br>
+    <br>
+    <% if((data.paid_afolami == "true")||(data.paid_omoniyi == "true")||(data.paid_adeyemo == "true")){%>
+        <p class="lead mb-3">Here are your classes and session links:</p>
+    <%} else {%>
+        <p class="lead mb-3">Classes and session links will be available after registration:</p>
+    <%}%>
+        <div class="row" style="margin-left: 25px;">
+        <div class="col-md-6 box">
+             <a href="https://demo.bigbluebutton.org/gl/olu-eje-q4t-awy" class="btn btn-primary btn-lg"> <strong>Qonektus Q&A  Meeting Session</strong></a>   
+        </div>
+    </div>
+
+</div>
+<div class="container"> 
+    <div class="row" style="margin-top: 50px; margin-left: 25px;">
+        
+        <div class="col-md-6 box" id ="Omoniyi-Yoruba-Session">
+            <% if(data.paid_omoniyi == "true"){%> 
+            <a href="https://demo.bigbluebutton.org/gl/olu-usm-1j7-8xz" class="btn btn-primary btn-lg"><strong>Qonektus Yoruba June Sessions</strong></a>
+            <%} else {%>
+   
+            <%}%>            
+        </div>
+    </div>
+    <div class="row" style="margin-top: 10px; margin-left: 25px;">    
+        <div class="col-md-6 box" id ="Taiwo-Music-Session">  
+            <% if(data.paid_afolami == "true"){%> 
+            <a href="https://demo.bigbluebutton.org/gl/olu-frf-wxs-z2g" class="btn btn-primary btn-lg"> <strong>Qonektus Music June Sessions</strong></a> 
+            <%} else {%>
+   
+            <%}%> 
+        </div>
+
+    </div>
+    <div class="row" style="margin-top: 10px; margin-left: 25px;">
+        <div class="col-md-6 box"> 
+            <% if(data.paid_adeyemo == "true"){%>  
+            <a href="https://demo.bigbluebutton.org/gl/olu-ump-mxs-g9n" class="btn btn-primary btn-lg"> <strong>Oba's Debate Training Sessions</strong></a>
+            <%} else {%>
+   
+            <%}%> 
+        </div>
+    </div>
+</div>
+    <br>
+    <br>
+    <br>
+</body>
+</html>

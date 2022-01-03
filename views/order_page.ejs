@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang ="en">
+<%- include('includes/usersheader')%>
+<body>
+
+<%- include('includes/usersnavbar')%>
+ <script src="https://www.paypal.com/sdk/js?client-id=AUfjlSuSRLWsMTBK1rLxr9hBzIuWlfYYGQ-hR-68Eer0yAWuxSvGE6S8Pd5VsRwyV1ZYAmNlOBXVITJZ"> // Replace YOUR_CLIENT_ID with your sandbox client ID
+ </script>
+
+	<div class="container">
+		<h1 class="mt-4"> <%= data.msg %>, Here is your order</h1>
+		<!-- <form id="myRegForm" name="myform" class="form-check" method="POST" action=""> --> <!-- class="mb-3 form-check" , move to right by 3; Col-sm-2 reduces length of input panel--> 
+			<div class="container"> 
+    		<div class="row" style="margin-top: 30px;">
+    			<% if(data.orderyoruba == "true"){%> 
+        		<div class="col-md-6 box">
+            		<a class="btn btn-primary3 btn-lg" style="color: white"> <strong>Qonektus Yoruba June Sessions</strong></a> 
+						<br>
+			    	</div>
+			      <%} else {%>
+   
+            <%}%> 
+        </div>
+        <div class="row" style="margin-top: 10px;"> 
+          <% if(data.ordermusic == "true"){%> 
+       		<div class="col-md-6 box" >
+            		<a class="btn btn-primary3 btn-lg" style="color: white"> <strong>Qonektus  Music  June Sessions </strong></a>       		
+					<br>
+					</div>
+					<%} else {%>
+   
+          <%}%>
+    		</div>
+    		<div class="row" style="margin-top: 10px;">
+    				<% if(data.orderdebate == "true"){%> 
+        		<div class="col-md-6 box">
+            		<a class="btn btn-primary3 btn-lg" style="color: white"> <strong>Qonektus Debate June Sessions</strong></a> 
+						<br>
+			    	</div>
+			    	<%} else {%>
+   
+          	<%}%>  
+    		</div>
+			</div>	
+			<br>
+			<br>
+			<br>
+			<h1 class="mt-4"> Total payment required this month - $<%= data.quote %></h1>
+			<br>
+			<!--<button type="submit" class="btn btn-primary"><strong>Submit Order</strong></button> -->
+		<!-- Paypal shows up here -->
+    	<div id="paypal-button-container" style="margin-left: 20px; width: 450px" class=" btn btn-primary"></div>
+		</form>
+
+	</div>
+
+
+
+    <!-- Add the checkout buttons, set up the order and approve the order -->
+    <script>
+      paypal.Buttons({
+        createOrder: function(data, actions) {
+          return actions.order.create({
+            purchase_units: [{
+              amount: {
+                value: <%= data.quote %>
+              }
+            }]
+          });
+        },
+        onApprove: function(data, actions) {
+          return actions.order.capture().then(function(details) {
+            alert('Transaction completed by ' + details.payer.name.given_name);
+          });
+        }
+      }).render('#paypal-button-container'); // Display payment options on your web page
+    </script>
+
+		<h4 class="mt-4" style="margin-top: 40px; margin-left: 375px; "> <strong>Note: </strong>After this payment is made, expect to be matched with a Tutor within 24 hours.
+			<br> You will find your sessions under <strong><i>My Courses</i></strong></h4>
+
+</body>
+</html>

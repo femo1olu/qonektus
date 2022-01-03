@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<%- include('../includes/usersheader') %>
+<body>
+<div class="jumbotron jumbotron-main"> <!--was jumbotron-sub -->
+<%- include('../includes/navbar') %>
+</div>
+  <div class="container">
+  <div class="alert" style = "color: goldenrod"> <strong><%- msg %></strong></div>
+ <form id = "myForm" class = "col-sm-4 mb-3 form-check" method = "POST" action = "signin">
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name ="email" required>
+    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" name ="password">
+    <p>
+    <strong>No Account?</strong><a href="/createaccount"><strong> Create Account</strong></a>
+    </strong><a href="/forgot_password"><strong> &nbsp Forgot Password?</strong></a>
+	</p> 
+
+  <button type="submit" class="btn btn-primary"><strong>Login</strong></button>
+</form>
+</body>
+</html>

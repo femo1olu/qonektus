@@ -1,0 +1,137 @@
+.btn-primary {
+	background: salmon; /*#313461;*/
+	border-color: darkgreen;
+	border-width: 3px;
+}
+
+.btn-primary2 {
+	background: salmon; /*#313461;*/
+	border-color: darkgreen;
+	border-width: 3px;
+	padding-left: 7px;
+}
+
+.btn-primary3 {
+	background: darkgreen; /*#313461;*/
+	border-color: darkgreen;
+	border-width: 3px;
+}
+
+.jumbotron{
+	/*background: #333 url('../img/teachlearncrossgreen.jpg') 100% 100%;*/
+	background: white;
+	background-blend-mode: difference;
+	color: 000;  /*lightyellow*/
+	text-align: center;
+	border-bottom: 5px darkgreen solid; /* #f4f4f4 solid; */  
+}
+
+.jumbotron-main{
+	padding: 0 60px 40px 60px;
+}
+
+.jumbotron-main-user-nav{
+	padding: 0 60px 20px 60px;
+}
+
+.jumbotron-main h1{
+	margin-top:60px;
+	margin-bottom:30px;
+}
+
+.jumbotron p.lead{
+	font-size:25px;
+	margin-bottom:60px;
+}
+
+.jumbotron-sub{
+	padding: 0 60px 40px 60px;
+}
+
+.navbar{
+	margin:0;
+	color:#fff;
+}
+
+.navbar a{
+	color: darkgreen; /*#fff;*/
+	margin-bottom:3px;
+}
+
+ .navbar a:hover{
+	background: none !important;
+	/*color: darkgreen;*/
+	border-bottom: yellowgreen 3px solid;
+	margin-bottom:0;
+}
+
+.box{
+	text-align: center;
+}
+
+.box .glyphicon{
+	font-size:50px;
+}
+
+.section-a{
+	background: darkgreen; /*#313461;*/
+	color:#fff;
+	text-align: center;
+	padding:50px;
+	margin-bottom:30px;
+}
+
+.section-a h1{
+	font-size:50px;
+}
+
+.img-full{
+	width:100%;
+}
+
+.main-footer{
+	background: darkgreen; /*#f5f5f5*/;
+	padding:50px;
+	color: white;
+}
+.list-group-item a{
+	color: darkgreen;
+}
+
+.list-unstyled a {
+	color: white;
+}
+
+.trustenblersection h1 {
+	color: 000;
+}
+
+.trustenblersection p {
+	color: 000;
+}
+
+.phone {
+	display: flex;
+}
+/*
+.root{
+	--light-gray: #DADCE0;
+	--light-blue: #1B9CE2;
+}
+.calendarbody{
+	margin: 0;
+}
+#app-calendar{
+	color: black;
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	grid-template-rows: repeat(5, 1fr);
+	background-color: darkgreen;
+	height: 100%;
+}
+*/
+.logoutSubmit{
+ width: 75px;
+ margin-left: 13px;
+ margin-top: 13px;
+}
