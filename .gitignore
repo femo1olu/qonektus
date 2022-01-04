@@ -1,4 +1,5 @@
 .env
+node_modules/
 /var/www/qonektusapp/qonektusapp/token.json
 /var/www/qonektusapp/qonektusapp/client_secret.json
 /var/www/qonektusapp/qonektusapp/public/img
